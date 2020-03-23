@@ -19,6 +19,13 @@ class Read{
             return null;
         }
     }
-    
+    async users(){
+        try{
+            const userResult = await user.find().sort({name:1});
+            return userResult;
+        }catch(e){
+            return null;
+        }
+    }
 }
 module.exports = Read;
