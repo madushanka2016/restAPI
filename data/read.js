@@ -11,6 +11,14 @@ class Read{
             return null;
         }
     }
+    async user(id){
+        try{
+            const userResult = await user.find({_id:id}).populate("friends",["name"]);
+            return userResult;
+        }catch(e){
+            return null;
+        }
+    }
     
 }
 module.exports = Read;
