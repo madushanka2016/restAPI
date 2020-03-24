@@ -14,3 +14,14 @@ const databaseConnection = require('./data/dbConnection');
 console.log(databaseConnection())
 
 
+/// routers
+require('./router/user/addUser')(app);
+require('./router/user/addFriend')(app);
+require('./router/user/deleteUser')(app);
+require('./router/user/getFriends')(app);
+require('./router/user/getUser')(app);
+require('./router/user/getUsers')(app);
+
+app.use((req,res) => {
+    return res.json({"Status":"error","StatusDetails":"Request not found"});
+});
